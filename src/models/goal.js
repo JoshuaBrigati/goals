@@ -33,7 +33,6 @@ Goal.toggleComplete = id => {
 };
 
 Goal.findGoalsByUser = function(user_id) {
-  console.log("findGoalsByUser called", user_id);
   return db("goals")
     .where({ user_id: user_id })
     .select("*")

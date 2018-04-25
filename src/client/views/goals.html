@@ -2,13 +2,11 @@
   <h1>My Goals</h1>
 
   <form ng-controller="GoalsController" name="goal">
-    <button type="submit" ng-click="newgoal()">Submit</button>
+    <button type="submit" ng-click="newgoal()">Add new goal</button>
   </form>
 
   <ol>
-    <li ng-repeat='goal in goals'>{{goal.goaltitle}}
-      <ul>{{goal.description}}</ul>
-    </li>
+    <li ng-repeat='goal in goals' ng-click="renderDetails(goal)">{{goal.goaltitle}}</li>
   </ol>
 
 </div>
