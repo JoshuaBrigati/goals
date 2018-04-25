@@ -1,14 +1,22 @@
-angular.module('GoalPosts', [
-  // TODO: Uncomment the following dependencies when you are ready to tackle authentication
-  // 'GoalPosts.Auth.Service'
-  // 'GoalPosts.Auth.Controller',
+angular
+  .module("GoalPosts", [
+    // TODO: Uncomment the following dependencies when you are ready to tackle authentication
+    // 'GoalPosts.Auth.Service'
+    // 'GoalPosts.Auth.Controller',
 
-  // TODO: ADD YOUR MODULES HERE
+    // TODO: ADD YOUR MODULES HERE
+    "GoalPosts.Detail.Controller",
+    "GoalPosts.GoalForm.Controller",
+    "GoalPosts.Goals.Controller",
+    "GoalPosts.Goals.Service",
 
-  'ngRoute'
-])
-.config(function ($routeProvider, $httpProvider) {
-  $routeProvider
+    "ngRoute"
+  ])
+  .config(function($routeProvider, $httpProvider) {
+    $routeProvider.when("/", {
+      templateUrl: "views/goals.html",
+      controller: "GoalsController"
+    });
     // TODO: ADD ROUTES HERE
 
     // TODO: Uncomment the following routes when you are ready to tackle authentication
@@ -22,8 +30,8 @@ angular.module('GoalPosts', [
     //   controller: 'AuthController'
     // })
 
-  // $httpProvider.interceptors.push('AttachTokens');
-})
+    // $httpProvider.interceptors.push('AttachTokens');
+  });
 
 // TODO: Uncomment the following code when you are ready to tackle authentication
 

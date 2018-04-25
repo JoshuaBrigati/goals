@@ -2,6 +2,10 @@
   <h1>My Goals</h1>
 
   <ol>
+    <!-- <li>{{goals}}</li> -->
+    <li ng-repeat='goal in goals'>{{goal.goaltitle}}
+      <ul>{{goal.description}}</ul>
+    </li>
     <!--
     TODO:
       - Show the users goals here
