@@ -8,16 +8,16 @@ var goal = require("./models/goal.js");
 // See 2-complete-routes/README.md for which routes you should implement first.
 
 router.get("/goals", (req, res) => {
-  console.log("CALLING /goals");
-  //goal.findGoalsByUser(1);
   goal.findGoalsByUser(1).then(goals => res.send(goals));
 });
 
 router.post("/goals", (req, res) => {
-  goal.addNewGoal(req.body).then(res.send(goals));
+  goal.addNewGoal(req.body).then(goal => res.send(goal));
 });
 
-router.get("/goals/:id", (req, res) => {});
+router.get("/goals/:id", (req, res) => {
+  goal.findGoalById(req.params.id.slice(-1)).then(goal => res.send(goal));
+});
 
 router.post("/signup", function() {
   var username = req.body.username;

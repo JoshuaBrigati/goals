@@ -13,11 +13,43 @@ angular
           return response;
         })
         .catch(err => {
+          console.log("GET GOALS ERR IN GOALS-SERVICE", err);
+        });
+    };
+
+    let getGoalById = id => {
+      return $http({
+        method: "GET",
+        url: `/goals/:${id}`
+      })
+        .then(response => {
+          return response;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    };
+
+    let postGoalForm = (title, description) => {
+      return $http({
+        method: "POST",
+        url: `/goals`,
+        data: {
+          title: title,
+          description: description
+        }
+      })
+        .then(response => {
+          return response;
+        })
+        .catch(err => {
           console.log(err);
         });
     };
 
     return {
-      getGoals: getGoals
+      getGoals: getGoals,
+      getGoalById: getGoalById,
+      postGoalForm: postGoalForm
     };
   });

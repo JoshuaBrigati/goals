@@ -1,4 +1,10 @@
 <div class="goal-detail">
+  <ol>
+    <!-- <li>{{goals}}</li> -->
+    <li ng-repeat='goal in goals'>{{goal.goaltitle}}
+      <ul>{{goal.description}}</ul>
+    </li>
+  </ol>
   <!--
   TODO:
     - Show the title, due date and details of a specific goal

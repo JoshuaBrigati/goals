@@ -8,20 +8,20 @@ NOTE: Avoid spending any time on styling. Your goal is to create a functioning a
 
 ## Bare Minimum Requirements
 
-- [ ] Complete index.html to include all the scripts you require to run your app
-- [ ] Explore the client directory and get familiar with what each file is responsible for
-  - Add all the modules as dependencies in app.js
-- [ ] Complete the goals-service with $http requests.
-- [ ] Build out the following views and controllers:
-  - goals.html and goals-controller.js
-  - detail.html and detail-controller.js
-  - goal-form.html and goal-form-controller.js
-- [ ] Add your front end routes in the app config.
+* [ X ] Complete index.html to include all the scripts you require to run your app
+* [ X ] Explore the client directory and get familiar with what each file is responsible for
+  * Add all the modules as dependencies in app.js
+* [ X ] Complete the goals-service with $http requests.
+* [ X ] Build out the following views and controllers:
+  * goals.html and goals-controller.js
+  * detail.html and detail-controller.js
+  * goal-form.html and goal-form-controller.js
+* [ X ] Add your front end routes in the app config.
 
 ### Tips:
 
-- Test your views and controllers by loading the app. Since there is no authentication yet you should be able to freely navigate between views.
+* Test your views and controllers by loading the app. Since there is no authentication yet you should be able to freely navigate between views.
 
 ## Advanced Content
 
-- Add some flair to you app with CSS or a styling framework!
+* Add some flair to you app with CSS or a styling framework!

@@ -13,10 +13,19 @@ angular
     "ngRoute"
   ])
   .config(function($routeProvider, $httpProvider) {
-    $routeProvider.when("/", {
-      templateUrl: "views/goals.html",
-      controller: "GoalsController"
-    });
+    $routeProvider
+      .when("/", {
+        templateUrl: "views/goals.html",
+        controller: "GoalsController"
+      })
+      .when("/goals/:id", {
+        templateUrl: "views/detail.html",
+        controller: "DetailController"
+      })
+      .when("/goal-form", {
+        templateUrl: "views/goal-form.html",
+        controller: "GoalsFormController"
+      });
     // TODO: ADD ROUTES HERE
 
     // TODO: Uncomment the following routes when you are ready to tackle authentication

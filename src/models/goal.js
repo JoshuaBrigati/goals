@@ -5,7 +5,7 @@ var Goal = {};
 Goal.addNewGoal = function(goal) {
   return db("goals")
     .insert({
-      user_id: goal.id,
+      user_id: 1,
       goaltitle: goal.title,
       description: goal.description
     })

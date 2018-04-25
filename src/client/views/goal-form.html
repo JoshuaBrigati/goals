@@ -1,4 +1,15 @@
-<form name="goal-form">
+<form ng-controller="GoalsFormController" name="goal-form">
+  Goal Title:
+  <input type="text" ng-model="title" placeholder="title">
+  <br>
+  </input>
+  <br> Description:
+  <br>
+  <textarea ng-model="description" rows="10" cols="30" placeholder="description"></textarea>
+  <br>
+  <br>
+  <button type="submit" ng-click="submit()">Submit</button>
+  <!-- <button>submit</button> -->
   <!--
   TODO:
     - Create inputs for a Goal title, due date and description
