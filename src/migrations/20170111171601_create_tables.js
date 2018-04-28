@@ -16,12 +16,9 @@ exports.up = function(knex, Promise) {
       table.boolean("completed");
     })
   ]);
-
-  // TODO: CREATE ANY OTHER TABLES YOU NEED
 };
 
 exports.down = function(knex, Promise) {
-  // TODO: DROP OTHER TABLES
   return Promise.all([
     knex.schema.dropTable("users"),
     knex.schema.dropTable("goals")

@@ -23,17 +23,24 @@
       <div class="navbar-collapse collapse" id="navbarColor01">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#/" style="font-size: 25px;">All Goals
-              <!-- <span class="sr-only">(current)</span> -->
-            </a>
+            <a class="nav-link" href="#/" style="font-size: 25px;">All Goals</a>
           </li>
         </ul>
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#/signin" style="font-size: 20px;">Login
-              <!-- <span class="sr-only">(current)</span> -->
-            </a>
-          </li>
+          <div ng-controller="AuthController">
+            <div ng-if="!auth()">
+              <li class="nav-item">
+                <a class="nav-link" href="#/signin" style="font-size: 20px;">Login</a>
+              </li>
+            </div>
+            <li class="nav-item">
+              <div ng-if="auth()">
+                <div ng-click="signout()">
+                  <a class="nav-link" style="font-size: 20px;">Logout</a>
+                </div>
+              </div>
+            </li>
+          </div>
         </ul>
       </div>
     </div>

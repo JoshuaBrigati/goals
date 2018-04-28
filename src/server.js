@@ -13,17 +13,11 @@ app.use(
   })
 );
 
-// Add static file service
 app.use(express.static(path.join(__dirname, "./client")));
 app.use("/scripts", express.static(path.join(__dirname, "./node_modules")));
 
 app.use("/", router);
-// TODO: SET UP SERVER
-// Add middleware
-// Add static file service
-// Add API routes
 
-// Example route. See server-spec.js for the related test.
 app.get("/zen", function(req, res) {
   res.send("There are no accidents. - Master Oogway");
 });

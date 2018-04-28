@@ -15,7 +15,6 @@ User.findByUsername = function(username) {
 };
 
 User.addNewUser = function(username, password) {
-  console.log("CALLED addNewUser ", username, password);
   return db("users")
     .insert({
       username: username,

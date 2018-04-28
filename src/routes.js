@@ -1,11 +1,9 @@
 var router = require("express").Router();
-var jwt = require("jwt-simple"); // for encoding and decoding tokens
+var jwt = require("jwt-simple");
 
 var db = require("./models/db.js");
 var user = require("./models/user.js");
 var goal = require("./models/goal.js");
-// TODO: ATTACH ROUTE HANDLERS
-// See 2-complete-routes/README.md for which routes you should implement first.
 
 router.get("/usergoals/:user_id", (req, res) => {
   goal
@@ -52,14 +50,6 @@ router.post("/login", function(req, res) {
       res.send({ user_id: response[0].id, token: token });
     }
   });
-
-  // TODO: Complete the login functionality:
-  // Search for username
-  // If not found, send back a 401 status code
-  // If found, compare the hashed passwords
-  // If there is a match
-  // Create a token and send it to the client
-  // If the match fails send back a 401 status code
 });
 
 module.exports = router;

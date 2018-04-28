@@ -21,10 +21,18 @@ angular
         .then(function(data) {
           $window.localStorage.setItem("user_id", data.user_id);
           $window.localStorage.setItem("com.gp", data.token);
-          $location.path("/");
+          $location.path("/signin");
         })
         .catch(function(error) {
           console.error(error);
         });
+    };
+
+    $scope.auth = function() {
+      return Auth.isAuth();
+    };
+
+    $scope.signout = function() {
+      Auth.signout();
     };
   });

@@ -27,7 +27,8 @@ angular
 
     var signout = function() {
       $window.localStorage.removeItem("com.gp");
-      $location.path("/login");
+      $window.localStorage.removeItem("user_id");
+      $location.path("/signin");
     };
 
     return {
