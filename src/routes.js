@@ -7,32 +7,51 @@ var goal = require("./models/goal.js");
 // TODO: ATTACH ROUTE HANDLERS
 // See 2-complete-routes/README.md for which routes you should implement first.
 
-router.get("/goals", (req, res) => {
-  goal.findGoalsByUser(1).then(goals => res.send(goals));
+router.get("/usergoals/:user_id", (req, res) => {
+  goal
+    .findGoalsByUser(req.params.user_id.replace(":", ""))
+    .then(goals => res.send(goals));
 });
 
-router.post("/goals", (req, res) => {
-  goal.addNewGoal(req.body).then(goal => res.send(goal));
+router.post("/usergoals/:user_id", (req, res) => {
+  goal
+    .addNewGoal(req.params.user_id.replace(":", ""), req.body)
+    .then(goal => res.send(goal));
 });
 
 router.get("/goals/:id", (req, res) => {
-  goal.findGoalById(req.params.id.slice(-1)).then(goal => res.send(goal));
+  goal
+    .findGoalById(req.params.id.replace(":", ""))
+    .then(goal => res.send(goal));
 });
 
-router.post("/signup", function() {
+router.post("/signup", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
 
-  // TODO: Complete the signup functionality:
-  // Search for username
-  // If taken, send a 409 status code
-  // If available, hash the password and store it in the database
-  // Send back a 201
+  user.findByUsername(username).then(response => {
+    if (response.length) {
+      res.sendStatus(409);
+    } else {
+      user.addNewUser(username, password).then(response => {
+        res.sendStatus(201);
+      });
+    }
+  });
 });
 
-router.post("/login", function() {
+router.post("/login", function(req, res) {
   var username = req.body.username;
   var password = req.body.password;
+
+  user.findByUsername(username).then(response => {
+    if (!response.length) {
+      res.sendStatus(401);
+    } else {
+      var token = jwt.encode(response[0], "secret");
+      res.send({ user_id: response[0].id, token: token });
+    }
+  });
 
   // TODO: Complete the login functionality:
   // Search for username

@@ -1,9 +1,39 @@
 <div id='signup'>
-  <h1>Sign Up</h1>
+  <!-- <h1>Sign Up</h1>
   <form name="signupForm" ng-submit='signup()'>
     <input type='text' ng-model='user.username'>
     <input type="password" ng-model='user.password'>
     <button>Sign Up</button>
   </form>
-  <a href="#/signin">Already have an account? <strong>Login</strong> ...</a>
+  <a href="#/signin">Already have an account? <strong>Login</strong> ...</a> -->
+  <div class="container">
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 style="margin-bottom: 50px; color: #00bc8c !important;">Sign Up</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bs-component">
+            <form name="signupForm" ng-submit='signup()'>
+              <div>
+                <label>Username</label>
+                <input type='text' class="form-control" ng-model='user.username' style="width: 20%;">
+              </div>
+              <div>
+                <label>Password</label>
+                <input type="password" class="form-control" ng-model='user.password' style="width: 20%;">
+              </div>
+              <br>
+              <button class="btn btn-outline-primary">Sign Up</button>
+            </form>
+            <a href="#/signin" style="font-size: 15px;">Already have an account?
+              <strong>Login</strong> ...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

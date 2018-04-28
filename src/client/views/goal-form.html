@@ -1,5 +1,6 @@
 <form ng-controller="GoalsFormController" name="goal-form">
-  Goal Title:
+  <!-- Goal Title:
+  <br>
   <input type="text" ng-model="title" placeholder="title">
   <br>
   </input>
@@ -8,5 +9,32 @@
   <textarea ng-model="description" rows="3" cols="20" placeholder="description"></textarea>
   <br>
   <br>
-  <button type="submit" ng-click="submit()">Submit</button>
+  <button type="submit" ng-click="submit()">Submit</button> -->
+  <div class="container">
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 style="margin-bottom: 50px; color: #00bc8c !important;">Create a new goal!</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bs-component">
+            Goal Title:
+            <br>
+            <input type="text" class="form-control" ng-model="title">
+            <br>
+            </input>
+            <br> Description:
+            <br>
+            <textarea class="form-control" ng-model="description"></textarea>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-outline-primary" ng-click="submit()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </form>

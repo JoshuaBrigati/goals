@@ -1,12 +1,24 @@
 <div class="goal-detail">
-  <ol>
-    <!-- <li>{{goals}}</li> -->
-    <li ng-repeat='goal in goals'>{{goal.goaltitle}}
-      <ul>{{goal.description}}</ul>
-    </li>
-  </ol>
-  <!--
-  TODO:
-    - Show the title, due date and details of a specific goal
-  -->
+  <div class="container">
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 style="margin-bottom: 50px; "></h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bs-component">
+            <div ng-repeat='goal in goals' class="card text-white bg-primary mb-3" style="max-width: 60rem; margin: auto; margin-bottom: 50px !important;">
+              <div class="card-header">{{goal.goaltitle}}</div>
+              <div class="card-body">
+                <p class="card-text">{{goal.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

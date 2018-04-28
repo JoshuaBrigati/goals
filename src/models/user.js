@@ -15,6 +15,17 @@ User.findByUsername = function(username) {
 };
 
 User.addNewUser = function(username, password) {
-  return db("users").insert({ username: username, password: password });
+  console.log("CALLED addNewUser ", username, password);
+  return db("users")
+    .insert({
+      username: username,
+      password: password
+    })
+    .then(user => {
+      return user;
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 module.exports = User;

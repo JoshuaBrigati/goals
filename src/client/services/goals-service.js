@@ -3,13 +3,9 @@ angular
 
   // TODO: Create a factory which provides $http functionality for Goals in other parts of the app.s
   .factory("Goals", function($http) {
-    let getGoals = username => {
-      return $http({
-        method: "GET",
-        url: `/goals`
-      })
+    let getGoals = user_id => {
+      return $http({ method: "GET", url: `/usergoals/:${user_id}` })
         .then(response => {
-          //console.log("IT WAS CALLED IN GOALS-SERVICE.JS ", response);
           return response;
         })
         .catch(err => {
@@ -30,10 +26,10 @@ angular
         });
     };
 
-    let postGoalForm = (title, description) => {
+    let postGoalForm = (user_id, title, description) => {
       return $http({
         method: "POST",
-        url: `/goals`,
+        url: `/usergoals/:${user_id}`,
         data: {
           title: title,
           description: description

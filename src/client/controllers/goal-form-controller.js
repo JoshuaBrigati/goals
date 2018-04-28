@@ -1,8 +1,17 @@
 angular
   .module("GoalPosts.GoalForm.Controller", [])
-  .controller("GoalsFormController", function($scope, $location, Goals) {
+  .controller("GoalsFormController", function(
+    $scope,
+    $window,
+    $location,
+    Goals
+  ) {
     $scope.submit = () => {
-      Goals.postGoalForm($scope.title, $scope.description)
+      Goals.postGoalForm(
+        $window.localStorage.user_id,
+        $scope.title,
+        $scope.description
+      )
         .then(function(response) {
           $location.url("/");
         })

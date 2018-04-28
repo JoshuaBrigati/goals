@@ -4,11 +4,11 @@ In this final section you will need to use JWTs to implement a full-stack authen
 
 ## Bare Minimum Requirements
 
-- [ ] Uncomment and read the authentication code in client/app.js
-- [ ] In routes.js, convert the pseudocode in the authentication routes into working code
-- [ ] Update your previous Goal model and /goals routes to save Goals for a specific user
-  - Look at the documentation for [jwt-simple](https://www.npmjs.com/package/jwt-simple) to learn how to encode and decode JWTs
+* [ X ] Uncomment and read the authentication code in client/app.js
+* [ X ] In routes.js, convert the pseudocode in the authentication routes into working code
+* [ X ] Update your previous Goal model and /goals routes to save Goals for a specific user
+  * Look at the documentation for [jwt-simple](https://www.npmjs.com/package/jwt-simple) to learn how to encode and decode JWTs
 
 ## Advanced Content
 
-- Abstract the JWT methods into a separate file called auth-helpers.js
+* Abstract the JWT methods into a separate file called auth-helpers.js

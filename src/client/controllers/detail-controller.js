@@ -1,6 +1,7 @@
 angular
   .module("GoalPosts.Detail.Controller", [])
   .controller("DetailController", function($scope, $location, Goals) {
+    console.log($location.$$path);
     let id = $location.$$path.slice(-1);
     $scope.goals = [];
 

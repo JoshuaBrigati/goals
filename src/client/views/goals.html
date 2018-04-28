@@ -1,12 +1,42 @@
 <div id="goals">
-  <h1>My Goals</h1>
+  <div class="container">
+    <div class="bs-docs-section">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 style="margin-bottom: 50px; color: #00bc8c !important;">Your Goals</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bs-component">
+            <div ng-repeat='goal in goals' ng-click="renderDetails(goal)" class="card text-white bg-primary mb-3" style="max-width: 60rem; margin: auto; margin-bottom: 50px !important;">
+              <div class="card-header">{{goal.goaltitle}}</div>
+              <div class="card-body">
+                <p class="card-text">{{goal.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-primary" ng-click="newgoal()">Add new goal</button>
+    </div>
+  </div>
+  <!-- <h1 class="cover-heading">My Goals</h1>
 
   <form ng-controller="GoalsController" name="goal">
-    <button type="submit" ng-click="newgoal()">Add new goal</button>
-  </form>
-
-  <ol>
-    <li ng-repeat='goal in goals' ng-click="renderDetails(goal)">{{goal.goaltitle}}</li>
-  </ol>
-
+    <div ng-if="!isLoggedIn()">
+      <div ng-click="signin()">Login</div>
+    </div>
+    <br>
+    <div ng-repeat='goal in goals' ng-click="renderDetails(goal)">
+      <div class="card text-white bg-primary mb-3" style="max-width: 50rem;">
+        <div class="card-header">{{goal.goaltitle}}</div>
+        <div class="card-body">
+          <p class="card-text">{{goal.description}}</p>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" ng-click="newgoal()">Add new goal</button>
+  </form> -->
 </div>

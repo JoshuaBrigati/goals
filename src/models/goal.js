@@ -2,10 +2,10 @@ var db = require("./db");
 
 var Goal = {};
 
-Goal.addNewGoal = function(goal) {
+Goal.addNewGoal = function(user_id, goal) {
   return db("goals")
     .insert({
-      user_id: 1,
+      user_id: user_id,
       goaltitle: goal.title,
       description: goal.description
     })

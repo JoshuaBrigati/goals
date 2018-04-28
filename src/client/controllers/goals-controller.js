@@ -1,9 +1,10 @@
 angular
   .module("GoalPosts.Goals.Controller", [])
-  .controller("GoalsController", function($scope, $location, Goals) {
+  .controller("GoalsController", function($scope, $window, $location, Goals) {
     $scope.goals = [];
 
-    Goals.getGoals().then(response => {
+    Goals.getGoals($window.localStorage.user_id).then(response => {
+      console.log("Goals ", response.data);
       $scope.goals = response.data;
     });
 
@@ -17,6 +18,15 @@ angular
 
     $scope.titleHome = () => {
       $location.url(`/`);
+    };
+
+    $scope.signin = () => {
+      $location.url("/signin");
+    };
+
+    $scope.isLoggedIn = () => {
+      console.log();
+      return true;
     };
   });
 // TODO: Define a controller that allows the user to view all goals.

@@ -1,8 +1,8 @@
 angular
   .module("GoalPosts", [
     // TODO: Uncomment the following dependencies when you are ready to tackle authentication
-    // 'GoalPosts.Auth.Service'
-    // 'GoalPosts.Auth.Controller',
+    "GoalPosts.Auth.Service",
+    "GoalPosts.Auth.Controller",
 
     // TODO: ADD YOUR MODULES HERE
     "GoalPosts.Detail.Controller",
