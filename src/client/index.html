@@ -12,39 +12,34 @@
 </head>
 
 <body data-gr-c-s-loaded="true">
-  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
     <div class="container">
       <a class="navbar-brand" href="#/" style="font-size: 40px;">GoalPosts</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="navbar-collapse collapse" id="navbarColor01">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#/" style="font-size: 25px;">All Goals</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav ml-auto">
-          <div ng-controller="AuthController">
-            <div ng-if="!auth()">
-              <li class="nav-item">
-                <a class="nav-link" href="#/signin" style="font-size: 20px;">Login</a>
-              </li>
-            </div>
+
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#/" style="font-size: 25px;">All Goals</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <div ng-controller="AuthController">
+          <div ng-if="!auth()">
             <li class="nav-item">
-              <div ng-if="auth()">
-                <div ng-click="signout()">
-                  <a class="nav-link" style="font-size: 20px;">Logout</a>
-                </div>
-              </div>
+              <a class="nav-link" href="#/signin" style="font-size: 20px;">Login</a>
             </li>
           </div>
-        </ul>
-      </div>
+          <li class="nav-item">
+            <div ng-if="auth()">
+              <div ng-click="signout()">
+                <a class="nav-link" style="font-size: 20px;">Logout</a>
+              </div>
+            </div>
+          </li>
+        </div>
+      </ul>
     </div>
-  </div>
+  </nav>
 
   <div ng-view></div>
 
