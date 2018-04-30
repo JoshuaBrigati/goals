@@ -1,5 +1,6 @@
 var router = require("express").Router();
 var jwt = require("jwt-simple");
+var bcrypt = require("bcrypt");
 
 var db = require("./models/db.js");
 var user = require("./models/user.js");
@@ -24,15 +25,20 @@ router.get("/goals/:id", (req, res) => {
 });
 
 router.post("/signup", function(req, res) {
+  const saltRounds = 10;
+  const myPlaintextPassword = req.body.password;
+  const someOtherPlaintextPassword = "not_bacon";
+
   var username = req.body.username;
-  var password = req.body.password;
 
   user.findByUsername(username).then(response => {
     if (response.length) {
       res.sendStatus(409);
     } else {
-      user.addNewUser(username, password).then(response => {
-        res.sendStatus(201);
+      bcrypt.hash(myPlaintextPassword, saltRounds, function(err, hash) {
+        user.addNewUser(username, hash).then(response => {
+          res.sendStatus(201);
+        });
       });
     }
   });
